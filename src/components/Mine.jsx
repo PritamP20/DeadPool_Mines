@@ -39,11 +39,12 @@ const Mine = () => {
       // const imageUrl = metadataJson.image;
       // console.log(imageUrl)
   } 
+  // getTokenAccounts(publicKey, connection) 
 
-  useEffect(()=>{
-    console.log(bet)
-    getTokenAccounts(publicKey, connection)
-  },[])
+  // useEffect(()=>{
+  //   console.log(bet)
+  //   getTokenAccounts(publicKey, connection)
+  // },[])
 
   const [bounce, setBounce] = useState(-1)
 
