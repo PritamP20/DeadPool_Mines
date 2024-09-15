@@ -19,12 +19,18 @@ import Transactions from './components/Transactions';
 
 
 function App() {
-  // const [count, setCount] = useState(0)
 
-  // const connection = new Connection("https://api.devnet.solana.com")
-  // console.log(connection)
+  useEffect(() => {
+    const disableRightClick = (e) => {
+      e.preventDefault();
+    };
 
-  console.log(import.meta.env.VITE_PRIVATE_KEY)
+    document.addEventListener('contextmenu', disableRightClick);
+
+    return () => {
+      document.removeEventListener('contextmenu', disableRightClick);
+    };
+  }, []);
 
 
   const network = WalletAdapterNetwork.Devnet;
@@ -65,6 +71,18 @@ function App() {
             <Route path='tran' element={<Transactions/>}/>
           </Routes>
         </Router>
+        <footer className="bg-#1a2c38 text-white py-6 px-4 text-center">
+          <div className="container mx-auto">
+            <p className="text-lg font-semibold italic">"Code never sleeps, but I do... sometimes."</p>
+            <div className="flex justify-center space-x-4 mt-4">
+              <a href="https://www.linkedin.com/in/pritam-p-012561253/" className="hover:text-gray-400" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://twitter.com/your-profile" className="hover:text-gray-400" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+              <a href="https://github.com/PritamP20" className="hover:text-gray-400" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </footer>
+
+
       </div>
     </WalletModalProvider>
   </WalletProvider>

@@ -17,6 +17,9 @@ const Mine = () => {
     const {publicKey, connected} = useWallet()
     const wallet = useWallet()
     const connection = new Connection("https://api.devnet.solana.com")
+    if(wallet!=null){
+      getTokenAccounts(publicKey, connection)
+    }
     if(publicKey!=null) console.log(publicKey.toString())
     const [fakeAccBalance, setFakeAccBalance] = useState(0)
 
@@ -228,7 +231,7 @@ const Mine = () => {
       
     </div>
 
-    <div className='flex w-screen h-screen justify-center items-stretch bg-#1a2c38' style={{backgroundColor:"#1a2c38"}}>
+    <div className='flex w-screen p-5 justify-center items-stretch bg-#1a2c38' style={{backgroundColor:"#1a2c38"}}>
       <div className=' md:grid md:grid-cols-12 lg:w-10/12 md:w-11/12 sm:w-8/12 gap-4 md:h-3/4 rounded-lg'>
         <div className='col-span-4 grid grid-cols-12 rounded-lg text-white' style={{backgroundColor:"#203642"}}>
           <div className='col-span-10 col-start-2 flex flex-col p-6'>
