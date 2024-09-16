@@ -105,15 +105,6 @@ const Mine = () => {
   }
 
   const startBet = async(e) => {
-    try {
-      notifySuccess("Sent Money!....")
-      await sendDPC(e, wallet, amount)
-      await getTokenAccounts(publicKey, connection)
-    } catch (error) {
-      notifySuccess("Nigga!....")
-      console.log(error)
-    }
-    setMines([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,]);
     setShowImage(prev=>{
       const newPrev = [...prev]
       newPrev.map((item,index)=>{
@@ -122,6 +113,19 @@ const Mine = () => {
       return newPrev;
     })
     setClicked([])
+    try {
+      notifySuccess("Sent Money!....")
+      await sendDPC(e, wallet, amount)
+    } catch (error) {
+      notifySuccess("Nigga!....")
+      console.log(error)
+    }
+    // try { 
+    //   await getTokenAccounts(publicKey, connection)
+    // } catch (error) {
+    //   notifyError("Sorry the balance wasn't fetched!")
+    // }
+    setMines([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,]);
     setGems(24)
     setMultiplier(0)
     setSuccessClicks(0)
@@ -129,10 +133,6 @@ const Mine = () => {
     setBet(true)
     e.preventDefault(); 
     generateRandomSeed(); 
-
-    setTimeout(()=>{
-      getTokenAccounts(publicKey, connection)
-    },2000)
   }
 
   const onCashOut = async (e) => {
@@ -215,7 +215,7 @@ const Mine = () => {
 
   return (
     <>
-    <div className='text-xl font-bold text-white flex justify-center p-3'>
+    <div className='text-xl mt-16 font-bold text-white flex justify-center p-3'>
       <span 
         className='p-2 rounded-md flex items-center' 
         style={{ backgroundColor: "#0e212e", paddingInline: "1rem", textAlign: "center" }}
