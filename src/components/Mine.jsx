@@ -215,7 +215,7 @@ const Mine = () => {
 
   return (
     <>
-    <div className='text-xl mt-16 font-bold text-white flex justify-center p-3'>
+    <div className='text-xl font-bold text-white flex justify-center p-3'>
       <span 
         className='p-2 rounded-md flex items-center' 
         style={{ backgroundColor: "#0e212e", paddingInline: "1rem", textAlign: "center" }}
