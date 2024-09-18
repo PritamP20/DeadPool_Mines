@@ -7,7 +7,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 const Transactions = () => {
     const connection = new Connection("https://api.devnet.solana.com");
     const wallet = useWallet()
-
+ 
     const localAccountPrivate = import.meta.env.VITE_PRIVATE_KEY;
     const secretKey = bs58.decode(localAccountPrivate);
     const keypair = Keypair.fromSecretKey(new Uint8Array(secretKey));
