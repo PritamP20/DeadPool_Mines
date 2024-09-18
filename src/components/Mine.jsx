@@ -297,8 +297,8 @@ const Mine = () => {
               {clicked.includes(index) ? (
                 showImage[index] ? (
                   mines[index] == 0 ? (
-                    <img className="w-3/4" src="https://silver-tricky-trout-945.mypinata.cloud/ipfs/bafkreic6a5uj7b7uscvlvuv4phzsfuf7vfg23du2atk4mhvibqafhg62t4" alt="" />
-                    // <img className="w-3/4" src="https://stake.com/_app/immutable/assets/mine.BrdEJX0T.svg" alt="" />
+                    // <img className="w-3/4" src="https://silver-tricky-trout-945.mypinata.cloud/ipfs/bafkreic6a5uj7b7uscvlvuv4phzsfuf7vfg23du2atk4mhvibqafhg62t4" alt="" />
+                    <img className="w-3/4" src="https://stake.com/_app/immutable/assets/mine.BrdEJX0T.svg" alt="" />
                   ) : (
                     <img className="w-3/4" src="https://stake.com/_app/immutable/assets/gem-none.Bcv6X_BH.svg" alt="" />
                   )
